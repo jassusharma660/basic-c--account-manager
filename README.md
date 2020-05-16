@@ -20,4 +20,4 @@ Select the Microsoft Visual Studios Solution file (c-sharp-account-manager.sln) 
 
 ![screenshot](https://raw.githubusercontent.com/jassusharma660/c-sharp-account-manager/master/guide/step3.png)
 
-You are all done!! 👍
+***You are all done!!*** :+1:
