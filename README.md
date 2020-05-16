@@ -15,8 +15,8 @@ This project was primarily made in Visual Studios 2015.
 
 ![screenshot](https://raw.githubusercontent.com/jassusharma660/c-sharp-account-manager/master/guide/step2.png)
 
-3. Go to the folder where you have cloned this project and inside that open the folder with the name ```c-sharp-account-manager```
-select the Microsoft Visual Studios Solution file (c-sharp-account-manager.sln) and click ```open```
+3. Go to the folder where you have cloned this project and inside that, open the folder with the name ```c-sharp-account-manager```.
+Select the Microsoft Visual Studios Solution file (c-sharp-account-manager.sln) and click ```open```
 
 ![screenshot](https://raw.githubusercontent.com/jassusharma660/c-sharp-account-manager/master/guide/step3.png)
 
