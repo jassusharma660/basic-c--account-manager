@@ -21,3 +21,7 @@ Select the Microsoft Visual Studios Solution file (c-sharp-account-manager.sln) 
 ![screenshot](https://raw.githubusercontent.com/jassusharma660/c-sharp-account-manager/master/guide/step3.png)
 
 ***You are all done!!*** :+1:
+
+Credit for images:  
+[Menu vector created by pikisuperstar - www.freepik.com](https://www.freepik.com/free-photos-vectors/menu)  
+[Menu vector created by pikisuperstar - www.freepik.com](https://www.freepik.com/free-photos-vectors/menu)
