@@ -77,8 +77,6 @@ namespace c_sharp_account_manager
 
         private void uidTextBox_Enter(object sender, EventArgs e)
         {
-            userIdContainer.ForeColor = Color.Black;
-
             if (uidTextBox.Text== "Enter user ID")
                 uidTextBox.Text = "";
 
@@ -111,6 +109,47 @@ namespace c_sharp_account_manager
             e.ClipRectangle.Width - 1,
             e.ClipRectangle.Height - 1);
             base.OnPaint(e);
+        }
+
+        private void passwordTextBox_Enter(object sender, EventArgs e)
+        {
+            if (passwordTextBox.Text == "Enter password")
+                passwordTextBox.Text = "";
+
+            passwordTextBox.ForeColor = Color.Black;
+
+        }
+
+        private void passwordTextBox_Leave(object sender, EventArgs e)
+        {
+            if (passwordTextBox.Text == "")
+                passwordTextBox.Text = "Enter password";
+
+            passwordTextBox.ForeColor = Color.Gray;
+
+        }
+
+        private void signUpButton_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawRectangle(Pens.Black,
+            e.ClipRectangle.Left,
+            e.ClipRectangle.Top,
+            e.ClipRectangle.Width - 1,
+            e.ClipRectangle.Height - 1);
+            base.OnPaint(e);
+        }
+        
+
+        private void signUpButton_MouseHover(object sender, EventArgs e)
+        {
+            signUpButtonLabel.ForeColor = Color.White;
+            signUpButton.BackColor = Color.Black;
+        }
+
+        private void signUpButton_MouseLeave(object sender, EventArgs e)
+        {
+            signUpButtonLabel.ForeColor = Color.Black;
+            signUpButton.BackColor = Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
         }
     }
 }

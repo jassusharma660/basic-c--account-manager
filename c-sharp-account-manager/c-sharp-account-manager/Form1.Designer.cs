@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.passwordContainer = new System.Windows.Forms.Panel();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.userIdLabel = new System.Windows.Forms.Label();
             this.userIdContainer = new System.Windows.Forms.Panel();
             this.uidTextBox = new System.Windows.Forms.TextBox();
             this.welcomeNoteLabel = new System.Windows.Forms.Label();
@@ -39,19 +43,19 @@
             this.closeIcon = new System.Windows.Forms.PictureBox();
             this.minimiseIcon = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.signUpButton = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.loginImages = new System.Windows.Forms.PictureBox();
-            this.userIdLabel = new System.Windows.Forms.Label();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.passwordContainer = new System.Windows.Forms.Panel();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.signUpButtonLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.passwordContainer.SuspendLayout();
             this.userIdContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimiseIcon)).BeginInit();
             this.panel2.SuspendLayout();
+            this.signUpButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loginImages)).BeginInit();
-            this.passwordContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,6 +79,57 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.Location = new System.Drawing.Point(79, 297);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(55, 13);
+            this.passwordLabel.TabIndex = 10;
+            this.passwordLabel.Text = "Password";
+            // 
+            // passwordContainer
+            // 
+            this.passwordContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.passwordContainer.Controls.Add(this.passwordTextBox);
+            this.passwordContainer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.passwordContainer.Location = new System.Drawing.Point(82, 317);
+            this.passwordContainer.Name = "passwordContainer";
+            this.passwordContainer.Padding = new System.Windows.Forms.Padding(1);
+            this.passwordContainer.Size = new System.Drawing.Size(296, 35);
+            this.passwordContainer.TabIndex = 9;
+            this.passwordContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.passwordContainer_Paint);
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.passwordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.passwordTextBox.Location = new System.Drawing.Point(14, 7);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.Size = new System.Drawing.Size(265, 20);
+            this.passwordTextBox.TabIndex = 6;
+            this.passwordTextBox.Text = "Enter password";
+            this.passwordTextBox.Enter += new System.EventHandler(this.passwordTextBox_Enter);
+            this.passwordTextBox.Leave += new System.EventHandler(this.passwordTextBox_Leave);
+            // 
+            // userIdLabel
+            // 
+            this.userIdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.userIdLabel.AutoSize = true;
+            this.userIdLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIdLabel.Location = new System.Drawing.Point(79, 220);
+            this.userIdLabel.Name = "userIdLabel";
+            this.userIdLabel.Size = new System.Drawing.Size(44, 13);
+            this.userIdLabel.TabIndex = 8;
+            this.userIdLabel.Text = "User ID";
             // 
             // userIdContainer
             // 
@@ -184,6 +239,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.signUpButton);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.loginImages);
             this.panel2.Location = new System.Drawing.Point(457, -3);
             this.panel2.Name = "panel2";
@@ -193,64 +250,51 @@
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
             // 
+            // signUpButton
+            // 
+            this.signUpButton.Controls.Add(this.signUpButtonLabel);
+            this.signUpButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.signUpButton.Location = new System.Drawing.Point(307, 151);
+            this.signUpButton.Name = "signUpButton";
+            this.signUpButton.Size = new System.Drawing.Size(64, 25);
+            this.signUpButton.TabIndex = 12;
+            this.signUpButton.Paint += new System.Windows.Forms.PaintEventHandler(this.signUpButton_Paint);
+            this.signUpButton.MouseLeave += new System.EventHandler(this.signUpButton_MouseLeave);
+            this.signUpButton.MouseHover += new System.EventHandler(this.signUpButton_MouseHover);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(200, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 21);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Don\'t have an account?";
+            // 
             // loginImages
             // 
             this.loginImages.Image = ((System.Drawing.Image)(resources.GetObject("loginImages.Image")));
-            this.loginImages.Location = new System.Drawing.Point(121, 120);
+            this.loginImages.Location = new System.Drawing.Point(78, 240);
             this.loginImages.Name = "loginImages";
             this.loginImages.Size = new System.Drawing.Size(200, 200);
             this.loginImages.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.loginImages.TabIndex = 0;
             this.loginImages.TabStop = false;
             // 
-            // userIdLabel
+            // signUpButtonLabel
             // 
-            this.userIdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.userIdLabel.AutoSize = true;
-            this.userIdLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userIdLabel.Location = new System.Drawing.Point(79, 220);
-            this.userIdLabel.Name = "userIdLabel";
-            this.userIdLabel.Size = new System.Drawing.Size(44, 13);
-            this.userIdLabel.TabIndex = 8;
-            this.userIdLabel.Text = "User ID";
-            // 
-            // passwordLabel
-            // 
-            this.passwordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(79, 297);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(55, 13);
-            this.passwordLabel.TabIndex = 10;
-            this.passwordLabel.Text = "Password";
-            // 
-            // passwordContainer
-            // 
-            this.passwordContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.passwordContainer.Controls.Add(this.passwordTextBox);
-            this.passwordContainer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.passwordContainer.Location = new System.Drawing.Point(82, 317);
-            this.passwordContainer.Name = "passwordContainer";
-            this.passwordContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.passwordContainer.Size = new System.Drawing.Size(296, 35);
-            this.passwordContainer.TabIndex = 9;
-            this.passwordContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.passwordContainer_Paint);
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.passwordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.passwordTextBox.Location = new System.Drawing.Point(14, 7);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(265, 20);
-            this.passwordTextBox.TabIndex = 6;
-            this.passwordTextBox.Text = "Enter password";
+            this.signUpButtonLabel.AutoSize = true;
+            this.signUpButtonLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.signUpButtonLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUpButtonLabel.Location = new System.Drawing.Point(10, 6);
+            this.signUpButtonLabel.Name = "signUpButtonLabel";
+            this.signUpButtonLabel.Size = new System.Drawing.Size(45, 13);
+            this.signUpButtonLabel.TabIndex = 0;
+            this.signUpButtonLabel.Text = "SignUp";
+            this.signUpButtonLabel.MouseHover += new System.EventHandler(this.signUpButton_MouseHover);
             // 
             // Login
             // 
@@ -271,15 +315,18 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.passwordContainer.ResumeLayout(false);
+            this.passwordContainer.PerformLayout();
             this.userIdContainer.ResumeLayout(false);
             this.userIdContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimiseIcon)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.signUpButton.ResumeLayout(false);
+            this.signUpButton.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loginImages)).EndInit();
-            this.passwordContainer.ResumeLayout(false);
-            this.passwordContainer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -301,6 +348,9 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Panel passwordContainer;
         private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel signUpButton;
+        private System.Windows.Forms.Label signUpButtonLabel;
     }
 }
 
