@@ -25,3 +25,4 @@ Select the Microsoft Visual Studios Solution file (c-sharp-account-manager.sln) 
 Credit for images:  
 [Menu vector created by pikisuperstar - www.freepik.com](https://www.freepik.com/free-photos-vectors/menu)  
 [Menu vector created by pikisuperstar - www.freepik.com](https://www.freepik.com/free-photos-vectors/menu)
+[icons8.com](https://icons8.com/)
