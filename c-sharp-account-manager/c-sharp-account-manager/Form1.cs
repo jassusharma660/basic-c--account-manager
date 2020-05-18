@@ -140,7 +140,7 @@ namespace c_sharp_account_manager
         }
         
 
-        private void signUpButton_MouseHover(object sender, EventArgs e)
+        private void signUpButton_MouseEnter(object sender, EventArgs e)
         {
             signUpButtonLabel.ForeColor = Color.White;
             signUpButton.BackColor = Color.Black;
@@ -151,5 +151,16 @@ namespace c_sharp_account_manager
             signUpButtonLabel.ForeColor = Color.Black;
             signUpButton.BackColor = Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
         }
+
+        private void loginButtonPanel_MouseEnter(object sender, EventArgs e)
+        {
+            loginButtonPanel.BackColor = Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(86)))), ((int)(((byte)(254)))));
+        }
+
+        private void loginButtonPanel_MouseLeave(object sender, EventArgs e)
+        {
+            loginButtonPanel.BackColor = Color.Black;
+        }
+        
     }
 }

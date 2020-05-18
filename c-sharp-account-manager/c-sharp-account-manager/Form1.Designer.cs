@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.forgotPasswordLabel = new System.Windows.Forms.Label();
+            this.loginButtonPanel = new System.Windows.Forms.Panel();
+            this.loginButtonLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.passwordContainer = new System.Windows.Forms.Panel();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
@@ -44,10 +47,11 @@
             this.minimiseIcon = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.signUpButton = new System.Windows.Forms.Panel();
+            this.signUpButtonLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.loginImages = new System.Windows.Forms.PictureBox();
-            this.signUpButtonLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.loginButtonPanel.SuspendLayout();
             this.passwordContainer.SuspendLayout();
             this.userIdContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImage)).BeginInit();
@@ -64,6 +68,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.forgotPasswordLabel);
+            this.panel1.Controls.Add(this.loginButtonPanel);
             this.panel1.Controls.Add(this.passwordLabel);
             this.panel1.Controls.Add(this.passwordContainer);
             this.panel1.Controls.Add(this.userIdLabel);
@@ -79,6 +85,48 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
+            // 
+            // forgotPasswordLabel
+            // 
+            this.forgotPasswordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.forgotPasswordLabel.AutoSize = true;
+            this.forgotPasswordLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.forgotPasswordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotPasswordLabel.ForeColor = System.Drawing.Color.Black;
+            this.forgotPasswordLabel.Location = new System.Drawing.Point(253, 427);
+            this.forgotPasswordLabel.Name = "forgotPasswordLabel";
+            this.forgotPasswordLabel.Size = new System.Drawing.Size(125, 13);
+            this.forgotPasswordLabel.TabIndex = 11;
+            this.forgotPasswordLabel.Text = "Forgot your password?";
+            // 
+            // loginButtonPanel
+            // 
+            this.loginButtonPanel.BackColor = System.Drawing.Color.Black;
+            this.loginButtonPanel.Controls.Add(this.loginButtonLabel);
+            this.loginButtonPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginButtonPanel.Location = new System.Drawing.Point(82, 372);
+            this.loginButtonPanel.Name = "loginButtonPanel";
+            this.loginButtonPanel.Size = new System.Drawing.Size(296, 35);
+            this.loginButtonPanel.TabIndex = 10;
+            this.loginButtonPanel.MouseEnter += new System.EventHandler(this.loginButtonPanel_MouseEnter);
+            this.loginButtonPanel.MouseLeave += new System.EventHandler(this.loginButtonPanel_MouseLeave);
+            // 
+            // loginButtonLabel
+            // 
+            this.loginButtonLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.loginButtonLabel.AutoSize = true;
+            this.loginButtonLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginButtonLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButtonLabel.ForeColor = System.Drawing.Color.White;
+            this.loginButtonLabel.Location = new System.Drawing.Point(123, 9);
+            this.loginButtonLabel.Name = "loginButtonLabel";
+            this.loginButtonLabel.Size = new System.Drawing.Size(47, 17);
+            this.loginButtonLabel.TabIndex = 0;
+            this.loginButtonLabel.Text = "Log in";
+            this.loginButtonLabel.MouseEnter += new System.EventHandler(this.loginButtonPanel_MouseEnter);
             // 
             // passwordLabel
             // 
@@ -259,8 +307,20 @@
             this.signUpButton.Size = new System.Drawing.Size(64, 25);
             this.signUpButton.TabIndex = 12;
             this.signUpButton.Paint += new System.Windows.Forms.PaintEventHandler(this.signUpButton_Paint);
+            this.signUpButton.MouseEnter += new System.EventHandler(this.signUpButton_MouseEnter);
             this.signUpButton.MouseLeave += new System.EventHandler(this.signUpButton_MouseLeave);
-            this.signUpButton.MouseHover += new System.EventHandler(this.signUpButton_MouseHover);
+            // 
+            // signUpButtonLabel
+            // 
+            this.signUpButtonLabel.AutoSize = true;
+            this.signUpButtonLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.signUpButtonLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUpButtonLabel.Location = new System.Drawing.Point(10, 6);
+            this.signUpButtonLabel.Name = "signUpButtonLabel";
+            this.signUpButtonLabel.Size = new System.Drawing.Size(45, 13);
+            this.signUpButtonLabel.TabIndex = 0;
+            this.signUpButtonLabel.Text = "SignUp";
+            this.signUpButtonLabel.MouseEnter += new System.EventHandler(this.signUpButton_MouseEnter);
             // 
             // label1
             // 
@@ -284,18 +344,6 @@
             this.loginImages.TabIndex = 0;
             this.loginImages.TabStop = false;
             // 
-            // signUpButtonLabel
-            // 
-            this.signUpButtonLabel.AutoSize = true;
-            this.signUpButtonLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signUpButtonLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signUpButtonLabel.Location = new System.Drawing.Point(10, 6);
-            this.signUpButtonLabel.Name = "signUpButtonLabel";
-            this.signUpButtonLabel.Size = new System.Drawing.Size(45, 13);
-            this.signUpButtonLabel.TabIndex = 0;
-            this.signUpButtonLabel.Text = "SignUp";
-            this.signUpButtonLabel.MouseHover += new System.EventHandler(this.signUpButton_MouseHover);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,6 +363,8 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.loginButtonPanel.ResumeLayout(false);
+            this.loginButtonPanel.PerformLayout();
             this.passwordContainer.ResumeLayout(false);
             this.passwordContainer.PerformLayout();
             this.userIdContainer.ResumeLayout(false);
@@ -351,6 +401,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel signUpButton;
         private System.Windows.Forms.Label signUpButtonLabel;
+        private System.Windows.Forms.Panel loginButtonPanel;
+        private System.Windows.Forms.Label loginButtonLabel;
+        private System.Windows.Forms.Label forgotPasswordLabel;
     }
 }
 
