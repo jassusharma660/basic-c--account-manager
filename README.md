@@ -1,5 +1,5 @@
 # A c\# based login and registration system.
-This is a repository contains login/registration system made in c#. 
+This repository contains login/registration system made in c#. 
 Feel free to use it in your project.
 
 This project was primarily made in Visual Studios 2015.
