@@ -151,7 +151,7 @@
             this.passwordContainer.Padding = new System.Windows.Forms.Padding(1);
             this.passwordContainer.Size = new System.Drawing.Size(296, 35);
             this.passwordContainer.TabIndex = 9;
-            this.passwordContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.passwordContainer_Paint);
+            this.passwordContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.container_Paint);
             // 
             // passwordTextBox
             // 
@@ -190,7 +190,7 @@
             this.userIdContainer.Padding = new System.Windows.Forms.Padding(1);
             this.userIdContainer.Size = new System.Drawing.Size(296, 35);
             this.userIdContainer.TabIndex = 7;
-            this.userIdContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.userIdContainer_Paint);
+            this.userIdContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.container_Paint);
             // 
             // uidTextBox
             // 
@@ -323,7 +323,7 @@
             this.signUpButton.Size = new System.Drawing.Size(64, 25);
             this.signUpButton.TabIndex = 12;
             this.signUpButton.Click += new System.EventHandler(this.signUpButtonLabel_Click);
-            this.signUpButton.Paint += new System.Windows.Forms.PaintEventHandler(this.signUpButton_Paint);
+            this.signUpButton.Paint += new System.Windows.Forms.PaintEventHandler(this.container_Paint);
             this.signUpButton.MouseEnter += new System.EventHandler(this.signUpButton_MouseEnter);
             this.signUpButton.MouseLeave += new System.EventHandler(this.signUpButton_MouseLeave);
             // 

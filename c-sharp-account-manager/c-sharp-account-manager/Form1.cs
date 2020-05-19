@@ -91,17 +91,7 @@ namespace c_sharp_account_manager
             uidTextBox.ForeColor = Color.Gray;
         }
 
-        private void userIdContainer_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawRectangle(Pens.Black,
-            e.ClipRectangle.Left,
-            e.ClipRectangle.Top,
-            e.ClipRectangle.Width - 1,
-            e.ClipRectangle.Height - 1);
-            base.OnPaint(e);
-        }
-
-        private void passwordContainer_Paint(object sender, PaintEventArgs e)
+        private void container_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawRectangle(Pens.Black,
             e.ClipRectangle.Left,
@@ -128,18 +118,6 @@ namespace c_sharp_account_manager
             passwordTextBox.ForeColor = Color.Gray;
 
         }
-
-        private void signUpButton_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawRectangle(Pens.Black,
-            e.ClipRectangle.Left,
-            e.ClipRectangle.Top,
-            e.ClipRectangle.Width - 1,
-            e.ClipRectangle.Height - 1);
-            base.OnPaint(e);
-        }
-        
-
         private void signUpButton_MouseEnter(object sender, EventArgs e)
         {
             signUpButtonLabel.ForeColor = Color.White;

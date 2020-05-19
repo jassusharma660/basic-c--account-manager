@@ -15,7 +15,7 @@ namespace c_sharp_account_manager
     {
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
-
+   
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -31,6 +31,8 @@ namespace c_sharp_account_manager
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+            this.ActiveControl = awesomeNoteLabel;
+            this.populateDob();
         }
         protected override CreateParams CreateParams
         {
@@ -82,15 +84,6 @@ namespace c_sharp_account_manager
             loginButton.BackColor = Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             loginButtonLabel.ForeColor = Color.Black;
         }
-        private void loginButton_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawRectangle(Pens.Black,
-            e.ClipRectangle.Left,
-            e.ClipRectangle.Top,
-            e.ClipRectangle.Width - 1,
-            e.ClipRectangle.Height - 1);
-            base.OnPaint(e);
-        }
 
         private void loginButtonLabel_Click(object sender, EventArgs e)
         {
@@ -111,6 +104,23 @@ namespace c_sharp_account_manager
                 this.Cursor = Cursors.Default;
                 this.Opacity += .1;
             }
+        }
+
+        private void container_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawRectangle(Pens.Black,
+            e.ClipRectangle.Left,
+            e.ClipRectangle.Top,
+            e.ClipRectangle.Width - 1,
+            e.ClipRectangle.Height - 1);
+            base.OnPaint(e);
+        }
+        private void populateDob()
+        {
+            int[] dayDob = new int[31];
+            for(int i = 1; i <= 31; i++)
+                dayDob[i - 1] = i;
+            dayComboBox.DataSource = dayDob;
         }
     }
 }
