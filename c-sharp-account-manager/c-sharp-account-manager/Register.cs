@@ -99,5 +99,18 @@ namespace c_sharp_account_manager
             this.Hide();
             l.Show();
         }
+
+        private void copyrightLabel_Click(object sender, EventArgs e)
+        {
+            this.Opacity -= .1;
+            this.Cursor = Cursors.AppStarting;
+            About a = new About();
+            a.ShowDialog();
+            if (a.IsDisposed)
+            {
+                this.Cursor = Cursors.Default;
+                this.Opacity += .1;
+            }
+        }
     }
 }

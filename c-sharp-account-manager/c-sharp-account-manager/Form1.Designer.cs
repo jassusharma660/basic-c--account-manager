@@ -46,11 +46,11 @@
             this.closeIcon = new System.Windows.Forms.PictureBox();
             this.minimiseIcon = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.copyrightLabel = new System.Windows.Forms.Label();
             this.signUpButton = new System.Windows.Forms.Panel();
             this.signUpButtonLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.loginImage = new System.Windows.Forms.PictureBox();
-            this.copyrightLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.loginButtonPanel.SuspendLayout();
             this.passwordContainer.SuspendLayout();
@@ -300,6 +300,20 @@
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
             // 
+            // copyrightLabel
+            // 
+            this.copyrightLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.copyrightLabel.AutoSize = true;
+            this.copyrightLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.copyrightLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyrightLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.copyrightLabel.Location = new System.Drawing.Point(307, 481);
+            this.copyrightLabel.Name = "copyrightLabel";
+            this.copyrightLabel.Size = new System.Drawing.Size(87, 13);
+            this.copyrightLabel.TabIndex = 12;
+            this.copyrightLabel.Text = "© Jassu Sharma";
+            this.copyrightLabel.Click += new System.EventHandler(this.copyrightLabel_Click);
+            // 
             // signUpButton
             // 
             this.signUpButton.Controls.Add(this.signUpButtonLabel);
@@ -347,18 +361,6 @@
             this.loginImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.loginImage.TabIndex = 0;
             this.loginImage.TabStop = false;
-            // 
-            // copyrightLabel
-            // 
-            this.copyrightLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.copyrightLabel.AutoSize = true;
-            this.copyrightLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyrightLabel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.copyrightLabel.Location = new System.Drawing.Point(307, 481);
-            this.copyrightLabel.Name = "copyrightLabel";
-            this.copyrightLabel.Size = new System.Drawing.Size(87, 13);
-            this.copyrightLabel.TabIndex = 12;
-            this.copyrightLabel.Text = "© Jassu Sharma";
             // 
             // Login
             // 
