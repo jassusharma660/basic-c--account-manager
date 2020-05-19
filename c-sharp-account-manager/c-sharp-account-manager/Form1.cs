@@ -52,7 +52,7 @@ namespace c_sharp_account_manager
 
         private void closeIcon_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void Login_MouseDown(object sender, MouseEventArgs e)
@@ -161,6 +161,13 @@ namespace c_sharp_account_manager
         {
             loginButtonPanel.BackColor = Color.Black;
         }
-        
+
+        private void signUpButtonLabel_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.AppStarting;
+            Register reg = new Register();
+            this.Hide();
+            reg.Show();
+        }
     }
 }

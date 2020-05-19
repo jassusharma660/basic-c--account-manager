@@ -49,7 +49,8 @@
             this.signUpButton = new System.Windows.Forms.Panel();
             this.signUpButtonLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.loginImages = new System.Windows.Forms.PictureBox();
+            this.loginImage = new System.Windows.Forms.PictureBox();
+            this.copyrightLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.loginButtonPanel.SuspendLayout();
             this.passwordContainer.SuspendLayout();
@@ -59,7 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.minimiseIcon)).BeginInit();
             this.panel2.SuspendLayout();
             this.signUpButton.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loginImages)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginImage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -287,9 +288,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.copyrightLabel);
             this.panel2.Controls.Add(this.signUpButton);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.loginImages);
+            this.panel2.Controls.Add(this.loginImage);
             this.panel2.Location = new System.Drawing.Point(457, -3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(414, 503);
@@ -306,6 +308,7 @@
             this.signUpButton.Name = "signUpButton";
             this.signUpButton.Size = new System.Drawing.Size(64, 25);
             this.signUpButton.TabIndex = 12;
+            this.signUpButton.Click += new System.EventHandler(this.signUpButtonLabel_Click);
             this.signUpButton.Paint += new System.Windows.Forms.PaintEventHandler(this.signUpButton_Paint);
             this.signUpButton.MouseEnter += new System.EventHandler(this.signUpButton_MouseEnter);
             this.signUpButton.MouseLeave += new System.EventHandler(this.signUpButton_MouseLeave);
@@ -320,6 +323,7 @@
             this.signUpButtonLabel.Size = new System.Drawing.Size(45, 13);
             this.signUpButtonLabel.TabIndex = 0;
             this.signUpButtonLabel.Text = "SignUp";
+            this.signUpButtonLabel.Click += new System.EventHandler(this.signUpButtonLabel_Click);
             this.signUpButtonLabel.MouseEnter += new System.EventHandler(this.signUpButton_MouseEnter);
             // 
             // label1
@@ -334,15 +338,27 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Don\'t have an account?";
             // 
-            // loginImages
+            // loginImage
             // 
-            this.loginImages.Image = ((System.Drawing.Image)(resources.GetObject("loginImages.Image")));
-            this.loginImages.Location = new System.Drawing.Point(78, 240);
-            this.loginImages.Name = "loginImages";
-            this.loginImages.Size = new System.Drawing.Size(200, 200);
-            this.loginImages.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.loginImages.TabIndex = 0;
-            this.loginImages.TabStop = false;
+            this.loginImage.Image = ((System.Drawing.Image)(resources.GetObject("loginImage.Image")));
+            this.loginImage.Location = new System.Drawing.Point(78, 240);
+            this.loginImage.Name = "loginImage";
+            this.loginImage.Size = new System.Drawing.Size(200, 200);
+            this.loginImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.loginImage.TabIndex = 0;
+            this.loginImage.TabStop = false;
+            // 
+            // copyrightLabel
+            // 
+            this.copyrightLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.copyrightLabel.AutoSize = true;
+            this.copyrightLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyrightLabel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.copyrightLabel.Location = new System.Drawing.Point(307, 481);
+            this.copyrightLabel.Name = "copyrightLabel";
+            this.copyrightLabel.Size = new System.Drawing.Size(87, 13);
+            this.copyrightLabel.TabIndex = 12;
+            this.copyrightLabel.Text = "© Jassu Sharma";
             // 
             // Login
             // 
@@ -377,7 +393,7 @@
             this.panel2.PerformLayout();
             this.signUpButton.ResumeLayout(false);
             this.signUpButton.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loginImages)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -388,7 +404,7 @@
         private System.Windows.Forms.PictureBox closeIcon;
         private System.Windows.Forms.PictureBox minimiseIcon;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox loginImages;
+        private System.Windows.Forms.PictureBox loginImage;
         private System.Windows.Forms.Label appDevNameLabel;
         private System.Windows.Forms.Label appNameLabel;
         private System.Windows.Forms.PictureBox logoImage;
@@ -405,6 +421,7 @@
         private System.Windows.Forms.Panel loginButtonPanel;
         private System.Windows.Forms.Label loginButtonLabel;
         private System.Windows.Forms.Label forgotPasswordLabel;
+        private System.Windows.Forms.Label copyrightLabel;
     }
 }
 
