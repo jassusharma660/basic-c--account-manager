@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -159,5 +160,48 @@ namespace c_sharp_account_manager
                 this.Opacity += .1;
             }
         }
+        private void loginFinal_Click(object sender, EventArgs e)
+        {
+            isFormDataValid();
+        }
+
+        private bool isFormDataValid()
+        {
+            if (string.IsNullOrEmpty(uidTextBox.Text) || uidTextBox.Text == "Enter user ID")
+            {
+                errorTextBox.Text = "User id can't be empty!";
+                uidTextBox.Focus();
+                return false;
+            }
+            else
+            {
+                if (!Regex.Match(uidTextBox.Text, @"^[a-zA-Z]+(?!\d+$)\w{7,20}$").Success)
+                {
+                    errorTextBox.Text = "Invalid User id!" + Environment.NewLine + "(Allowed only 8-20 characters alphanumerics)";
+                    uidTextBox.Focus();
+                    return false;
+                }
+            }
+            
+            if (string.IsNullOrEmpty(passwordTextBox.Text) || passwordTextBox.Text == "Enter password")
+            {
+                errorTextBox.Text = "Password can't be empty!";
+                passwordTextBox.Focus();
+                return false;
+            }
+            else
+            {
+                if (!Regex.Match(passwordTextBox.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,30}$").Success)
+                {
+                    errorTextBox.Text = "Password not valid!" + Environment.NewLine + "(8-30 chars with atleast 1 uppercase, lowercase, number and special char)";
+                    passwordTextBox.Focus();
+                    return false;
+                }
+            }
+            
+            errorTextBox.Text = "";
+            return true;
+        }
+        
     }
 }

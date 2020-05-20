@@ -51,6 +51,7 @@
             this.signUpButtonLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.loginImage = new System.Windows.Forms.PictureBox();
+            this.errorTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.loginButtonPanel.SuspendLayout();
             this.passwordContainer.SuspendLayout();
@@ -69,6 +70,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.errorTextBox);
             this.panel1.Controls.Add(this.forgotPasswordLabel);
             this.panel1.Controls.Add(this.loginButtonPanel);
             this.panel1.Controls.Add(this.passwordLabel);
@@ -110,6 +112,7 @@
             this.loginButtonPanel.Name = "loginButtonPanel";
             this.loginButtonPanel.Size = new System.Drawing.Size(296, 35);
             this.loginButtonPanel.TabIndex = 10;
+            this.loginButtonPanel.Click += new System.EventHandler(this.loginFinal_Click);
             this.loginButtonPanel.MouseEnter += new System.EventHandler(this.loginButtonPanel_MouseEnter);
             this.loginButtonPanel.MouseLeave += new System.EventHandler(this.loginButtonPanel_MouseLeave);
             // 
@@ -127,6 +130,7 @@
             this.loginButtonLabel.Size = new System.Drawing.Size(47, 17);
             this.loginButtonLabel.TabIndex = 0;
             this.loginButtonLabel.Text = "Log in";
+            this.loginButtonLabel.Click += new System.EventHandler(this.loginFinal_Click);
             this.loginButtonLabel.MouseEnter += new System.EventHandler(this.loginButtonPanel_MouseEnter);
             // 
             // passwordLabel
@@ -212,7 +216,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.welcomeNoteLabel.AutoSize = true;
             this.welcomeNoteLabel.Font = new System.Drawing.Font("Segoe UI Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeNoteLabel.Location = new System.Drawing.Point(121, 135);
+            this.welcomeNoteLabel.Location = new System.Drawing.Point(121, 116);
             this.welcomeNoteLabel.Name = "welcomeNoteLabel";
             this.welcomeNoteLabel.Size = new System.Drawing.Size(220, 37);
             this.welcomeNoteLabel.TabIndex = 5;
@@ -224,7 +228,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.appDevNameLabel.AutoSize = true;
             this.appDevNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.appDevNameLabel.Location = new System.Drawing.Point(207, 102);
+            this.appDevNameLabel.Location = new System.Drawing.Point(207, 83);
             this.appDevNameLabel.Name = "appDevNameLabel";
             this.appDevNameLabel.Size = new System.Drawing.Size(90, 13);
             this.appDevNameLabel.TabIndex = 4;
@@ -236,7 +240,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.appNameLabel.AutoSize = true;
             this.appNameLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.appNameLabel.Location = new System.Drawing.Point(203, 72);
+            this.appNameLabel.Location = new System.Drawing.Point(203, 53);
             this.appNameLabel.Name = "appNameLabel";
             this.appNameLabel.Size = new System.Drawing.Size(92, 30);
             this.appNameLabel.TabIndex = 3;
@@ -247,7 +251,7 @@
             this.logoImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.logoImage.Image = ((System.Drawing.Image)(resources.GetObject("logoImage.Image")));
-            this.logoImage.Location = new System.Drawing.Point(151, 70);
+            this.logoImage.Location = new System.Drawing.Point(151, 51);
             this.logoImage.Name = "logoImage";
             this.logoImage.Size = new System.Drawing.Size(50, 50);
             this.logoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -362,6 +366,19 @@
             this.loginImage.TabIndex = 0;
             this.loginImage.TabStop = false;
             // 
+            // errorTextBox
+            // 
+            this.errorTextBox.BackColor = System.Drawing.Color.White;
+            this.errorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.errorTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.errorTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.errorTextBox.Location = new System.Drawing.Point(38, 169);
+            this.errorTextBox.Multiline = true;
+            this.errorTextBox.Name = "errorTextBox";
+            this.errorTextBox.Size = new System.Drawing.Size(395, 49);
+            this.errorTextBox.TabIndex = 16;
+            this.errorTextBox.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,6 +441,7 @@
         private System.Windows.Forms.Label loginButtonLabel;
         private System.Windows.Forms.Label forgotPasswordLabel;
         private System.Windows.Forms.Label copyrightLabel;
+        private System.Windows.Forms.TextBox errorTextBox;
     }
 }
 
