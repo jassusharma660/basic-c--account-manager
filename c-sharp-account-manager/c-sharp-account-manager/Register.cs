@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -114,6 +115,77 @@ namespace c_sharp_account_manager
             e.ClipRectangle.Height - 1);
             base.OnPaint(e);
         }
-        
+
+        private void registerFinal_Click(object sender, EventArgs e)
+        {
+            isFormDataValid();
+        }
+
+        private bool isFormDataValid()
+        {
+            if (string.IsNullOrEmpty(uidTextBox.Text))
+            {
+                errorTextBox.Text = "User id can't be empty!";
+                uidTextBox.Focus();
+                return false;
+            }
+            else
+            {
+                if (!Regex.Match(uidTextBox.Text, @"^[a-zA-Z]+(?!\d+$)\w{7,20}$").Success)
+                {
+                    errorTextBox.Text = "Invalid User id!"+ Environment.NewLine + "(Allowed only 8-20 characters alphanumerics)";
+                    uidTextBox.Focus();
+                    return false;
+                }
+            }
+
+            if (string.IsNullOrEmpty(emailTextbox.Text))
+            {
+                errorTextBox.Text = "Email id can't be empty!";
+                emailTextbox.Focus();
+                return false;
+            }
+            else
+            {
+                if (!Regex.Match(emailTextbox.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,6})+)$").Success)
+                {
+                    errorTextBox.Text = "Email not valid!)";
+                    emailTextbox.Focus();
+                    return false;
+                }
+            }
+            if (string.IsNullOrEmpty(passwordTextBox.Text) || string.IsNullOrEmpty(repeatPasswordTextBox.Text))
+            {
+                errorTextBox.Text = "Password or Repeat Password can't be empty!";
+                if (passwordTextBox.Text == "") passwordTextBox.Focus(); else repeatPasswordTextBox.Focus();
+                return false;
+            }
+            if (!string.Equals(passwordTextBox.Text, repeatPasswordTextBox.Text))
+            {
+                errorTextBox.Text = "Password and Repeat Password must be same.";
+                return false;
+            }
+            else
+            {
+                if (!Regex.Match(passwordTextBox.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,30}$").Success)
+                {
+                    errorTextBox.Text = "Password not valid!"+ Environment.NewLine + "(8-30 chars with atleast 1 uppercase, lowercase, number and special char)";
+                    passwordTextBox.Focus();
+                    return false;
+                }
+            }
+            if(!maleRadioButton.Checked && !femaleRadioButton.Checked && !nonBinaryRadioButton.Checked)
+            {
+                errorTextBox.Text = "Select a gender!";
+                return false;
+            }
+            if(!acceptTerms.Checked)
+            {
+                errorTextBox.Text = "Please accept terms and conditions to continue.";
+                return false;
+            }
+            errorTextBox.Text = "";
+            return true;
+        }
     }
 }

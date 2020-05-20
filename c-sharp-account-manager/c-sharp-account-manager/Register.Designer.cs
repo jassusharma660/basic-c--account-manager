@@ -53,7 +53,7 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.repeatPasswordLabel = new System.Windows.Forms.Label();
             this.repeatPasswordContainer = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.repeatPasswordTextBox = new System.Windows.Forms.TextBox();
             this.registerButtonPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.genderLabel = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dobDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.acceptTerms = new System.Windows.Forms.CheckBox();
+            this.errorTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.minimiseIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeIcon)).BeginInit();
             this.panel1.SuspendLayout();
@@ -223,7 +224,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.awesomeNoteLabel.AutoSize = true;
             this.awesomeNoteLabel.Font = new System.Drawing.Font("Segoe UI Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.awesomeNoteLabel.Location = new System.Drawing.Point(277, 61);
+            this.awesomeNoteLabel.Location = new System.Drawing.Point(277, 69);
             this.awesomeNoteLabel.Name = "awesomeNoteLabel";
             this.awesomeNoteLabel.Size = new System.Drawing.Size(164, 37);
             this.awesomeNoteLabel.TabIndex = 1;
@@ -233,7 +234,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(185, 98);
+            this.label2.Location = new System.Drawing.Point(185, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(241, 23);
             this.label2.TabIndex = 2;
@@ -245,7 +246,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.userIdLabel.AutoSize = true;
             this.userIdLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userIdLabel.Location = new System.Drawing.Point(83, 153);
+            this.userIdLabel.Location = new System.Drawing.Point(83, 196);
             this.userIdLabel.Name = "userIdLabel";
             this.userIdLabel.Size = new System.Drawing.Size(44, 13);
             this.userIdLabel.TabIndex = 3;
@@ -256,7 +257,7 @@
             this.userIdContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.userIdContainer.Controls.Add(this.uidTextBox);
             this.userIdContainer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.userIdContainer.Location = new System.Drawing.Point(86, 173);
+            this.userIdContainer.Location = new System.Drawing.Point(86, 216);
             this.userIdContainer.Name = "userIdContainer";
             this.userIdContainer.Padding = new System.Windows.Forms.Padding(1);
             this.userIdContainer.Size = new System.Drawing.Size(296, 35);
@@ -273,7 +274,6 @@
             this.uidTextBox.Name = "uidTextBox";
             this.uidTextBox.Size = new System.Drawing.Size(265, 20);
             this.uidTextBox.TabIndex = 0;
-            this.uidTextBox.Text = "Enter user ID";
             // 
             // emailLabel
             // 
@@ -281,7 +281,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.emailLabel.AutoSize = true;
             this.emailLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLabel.Location = new System.Drawing.Point(83, 219);
+            this.emailLabel.Location = new System.Drawing.Point(83, 262);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(35, 13);
             this.emailLabel.TabIndex = 5;
@@ -292,7 +292,7 @@
             this.emailContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emailContainer.Controls.Add(this.emailTextbox);
             this.emailContainer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.emailContainer.Location = new System.Drawing.Point(86, 239);
+            this.emailContainer.Location = new System.Drawing.Point(86, 282);
             this.emailContainer.Name = "emailContainer";
             this.emailContainer.Padding = new System.Windows.Forms.Padding(1);
             this.emailContainer.Size = new System.Drawing.Size(296, 35);
@@ -309,7 +309,6 @@
             this.emailTextbox.Name = "emailTextbox";
             this.emailTextbox.Size = new System.Drawing.Size(265, 20);
             this.emailTextbox.TabIndex = 0;
-            this.emailTextbox.Text = "Enter your email";
             // 
             // passwordLabel
             // 
@@ -317,7 +316,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(83, 285);
+            this.passwordLabel.Location = new System.Drawing.Point(83, 328);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(55, 13);
             this.passwordLabel.TabIndex = 7;
@@ -328,7 +327,7 @@
             this.passwordContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordContainer.Controls.Add(this.passwordTextBox);
             this.passwordContainer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.passwordContainer.Location = new System.Drawing.Point(86, 306);
+            this.passwordContainer.Location = new System.Drawing.Point(86, 349);
             this.passwordContainer.Name = "passwordContainer";
             this.passwordContainer.Padding = new System.Windows.Forms.Padding(1);
             this.passwordContainer.Size = new System.Drawing.Size(296, 35);
@@ -346,7 +345,6 @@
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(265, 20);
             this.passwordTextBox.TabIndex = 0;
-            this.passwordTextBox.Text = "Enter password";
             // 
             // repeatPasswordLabel
             // 
@@ -354,7 +352,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.repeatPasswordLabel.AutoSize = true;
             this.repeatPasswordLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.repeatPasswordLabel.Location = new System.Drawing.Point(83, 352);
+            this.repeatPasswordLabel.Location = new System.Drawing.Point(83, 395);
             this.repeatPasswordLabel.Name = "repeatPasswordLabel";
             this.repeatPasswordLabel.Size = new System.Drawing.Size(94, 13);
             this.repeatPasswordLabel.TabIndex = 9;
@@ -363,37 +361,37 @@
             // repeatPasswordContainer
             // 
             this.repeatPasswordContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.repeatPasswordContainer.Controls.Add(this.textBox2);
+            this.repeatPasswordContainer.Controls.Add(this.repeatPasswordTextBox);
             this.repeatPasswordContainer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.repeatPasswordContainer.Location = new System.Drawing.Point(86, 373);
+            this.repeatPasswordContainer.Location = new System.Drawing.Point(86, 416);
             this.repeatPasswordContainer.Name = "repeatPasswordContainer";
             this.repeatPasswordContainer.Padding = new System.Windows.Forms.Padding(1);
             this.repeatPasswordContainer.Size = new System.Drawing.Size(296, 35);
             this.repeatPasswordContainer.TabIndex = 10;
             this.repeatPasswordContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.container_Paint);
             // 
-            // textBox2
+            // repeatPasswordTextBox
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(14, 7);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(265, 20);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "Enter password";
+            this.repeatPasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.repeatPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.repeatPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repeatPasswordTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.repeatPasswordTextBox.Location = new System.Drawing.Point(14, 7);
+            this.repeatPasswordTextBox.Name = "repeatPasswordTextBox";
+            this.repeatPasswordTextBox.PasswordChar = '*';
+            this.repeatPasswordTextBox.Size = new System.Drawing.Size(265, 20);
+            this.repeatPasswordTextBox.TabIndex = 0;
             // 
             // registerButtonPanel
             // 
             this.registerButtonPanel.BackColor = System.Drawing.Color.Black;
             this.registerButtonPanel.Controls.Add(this.label3);
             this.registerButtonPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.registerButtonPanel.Location = new System.Drawing.Point(86, 602);
+            this.registerButtonPanel.Location = new System.Drawing.Point(86, 632);
             this.registerButtonPanel.Name = "registerButtonPanel";
             this.registerButtonPanel.Size = new System.Drawing.Size(296, 35);
             this.registerButtonPanel.TabIndex = 18;
+            this.registerButtonPanel.Click += new System.EventHandler(this.registerFinal_Click);
             // 
             // label3
             // 
@@ -409,6 +407,7 @@
             this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Register";
+            this.label3.Click += new System.EventHandler(this.registerFinal_Click);
             // 
             // genderLabel
             // 
@@ -416,7 +415,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.genderLabel.AutoSize = true;
             this.genderLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderLabel.Location = new System.Drawing.Point(83, 419);
+            this.genderLabel.Location = new System.Drawing.Point(83, 462);
             this.genderLabel.Name = "genderLabel";
             this.genderLabel.Size = new System.Drawing.Size(44, 13);
             this.genderLabel.TabIndex = 11;
@@ -425,7 +424,7 @@
             // maleRadioButton
             // 
             this.maleRadioButton.AutoSize = true;
-            this.maleRadioButton.Location = new System.Drawing.Point(113, 444);
+            this.maleRadioButton.Location = new System.Drawing.Point(113, 487);
             this.maleRadioButton.Name = "maleRadioButton";
             this.maleRadioButton.Size = new System.Drawing.Size(48, 17);
             this.maleRadioButton.TabIndex = 12;
@@ -436,7 +435,7 @@
             // femaleRadioButton
             // 
             this.femaleRadioButton.AutoSize = true;
-            this.femaleRadioButton.Location = new System.Drawing.Point(198, 444);
+            this.femaleRadioButton.Location = new System.Drawing.Point(198, 487);
             this.femaleRadioButton.Name = "femaleRadioButton";
             this.femaleRadioButton.Size = new System.Drawing.Size(59, 17);
             this.femaleRadioButton.TabIndex = 13;
@@ -447,7 +446,7 @@
             // nonBinaryRadioButton
             // 
             this.nonBinaryRadioButton.AutoSize = true;
-            this.nonBinaryRadioButton.Location = new System.Drawing.Point(284, 444);
+            this.nonBinaryRadioButton.Location = new System.Drawing.Point(284, 487);
             this.nonBinaryRadioButton.Name = "nonBinaryRadioButton";
             this.nonBinaryRadioButton.Size = new System.Drawing.Size(77, 17);
             this.nonBinaryRadioButton.TabIndex = 14;
@@ -461,7 +460,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(83, 479);
+            this.label4.Location = new System.Drawing.Point(83, 522);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 15;
@@ -475,7 +474,7 @@
             this.dobDateTimePicker.CalendarMonthBackground = System.Drawing.SystemColors.WindowFrame;
             this.dobDateTimePicker.CalendarTitleForeColor = System.Drawing.Color.Gray;
             this.dobDateTimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dobDateTimePicker.Location = new System.Drawing.Point(86, 500);
+            this.dobDateTimePicker.Location = new System.Drawing.Point(86, 543);
             this.dobDateTimePicker.MaxDate = new System.DateTime(2020, 5, 20, 0, 0, 0, 0);
             this.dobDateTimePicker.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dobDateTimePicker.Name = "dobDateTimePicker";
@@ -488,12 +487,25 @@
             this.acceptTerms.AutoSize = true;
             this.acceptTerms.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acceptTerms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.acceptTerms.Location = new System.Drawing.Point(89, 559);
+            this.acceptTerms.Location = new System.Drawing.Point(89, 592);
             this.acceptTerms.Name = "acceptTerms";
             this.acceptTerms.Size = new System.Drawing.Size(202, 19);
             this.acceptTerms.TabIndex = 19;
             this.acceptTerms.Text = "Accept our Terms and Conditions";
             this.acceptTerms.UseVisualStyleBackColor = true;
+            // 
+            // errorTextBox
+            // 
+            this.errorTextBox.BackColor = System.Drawing.Color.White;
+            this.errorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.errorTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.errorTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.errorTextBox.Location = new System.Drawing.Point(46, 144);
+            this.errorTextBox.Multiline = true;
+            this.errorTextBox.Name = "errorTextBox";
+            this.errorTextBox.Size = new System.Drawing.Size(395, 49);
+            this.errorTextBox.TabIndex = 15;
+            this.errorTextBox.TabStop = false;
             // 
             // Register
             // 
@@ -501,6 +513,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(872, 702);
+            this.Controls.Add(this.errorTextBox);
             this.Controls.Add(this.acceptTerms);
             this.Controls.Add(this.dobDateTimePicker);
             this.Controls.Add(this.nonBinaryRadioButton);
@@ -581,7 +594,7 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label repeatPasswordLabel;
         private System.Windows.Forms.Panel repeatPasswordContainer;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox repeatPasswordTextBox;
         private System.Windows.Forms.Panel registerButtonPanel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label genderLabel;
@@ -591,5 +604,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dobDateTimePicker;
         private System.Windows.Forms.CheckBox acceptTerms;
+        private System.Windows.Forms.TextBox errorTextBox;
     }
 }
