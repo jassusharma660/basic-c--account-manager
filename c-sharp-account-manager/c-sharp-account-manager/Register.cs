@@ -32,7 +32,6 @@ namespace c_sharp_account_manager
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             this.ActiveControl = awesomeNoteLabel;
-            this.populateDob();
         }
         protected override CreateParams CreateParams
         {
@@ -115,12 +114,6 @@ namespace c_sharp_account_manager
             e.ClipRectangle.Height - 1);
             base.OnPaint(e);
         }
-        private void populateDob()
-        {
-            int[] dayDob = new int[31];
-            for(int i = 1; i <= 31; i++)
-                dayDob[i - 1] = i;
-            dayComboBox.DataSource = dayDob;
-        }
+        
     }
 }
