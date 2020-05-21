@@ -9,3 +9,5 @@ C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-man
 C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-manager\c-sharp-account-manager\obj\Debug\c_sharp_account_manager.Login.resources
 C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-manager\c-sharp-account-manager\obj\Debug\c_sharp_account_manager.Register.resources
 C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-manager\c-sharp-account-manager\obj\Debug\c_sharp_account_manager.About.resources
+C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-manager\c-sharp-account-manager\bin\Debug\Users.mdf
+C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-manager\c-sharp-account-manager\bin\Debug\Users_log.ldf

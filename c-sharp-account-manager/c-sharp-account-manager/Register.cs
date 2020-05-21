@@ -119,6 +119,7 @@ namespace c_sharp_account_manager
         private void registerFinal_Click(object sender, EventArgs e)
         {
             isFormDataValid();
+            //select convert(varchar, getdate(), 106)
         }
 
         private bool isFormDataValid()
