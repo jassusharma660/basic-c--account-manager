@@ -66,7 +66,7 @@ namespace c_sharp_account_manager
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Process.Start("https://www.linkedin.com/in/jassu-sharma-b40619b0");
+            Process.Start("https://www.linkedin.com/in/jassusharma660");
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

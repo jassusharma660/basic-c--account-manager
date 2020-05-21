@@ -27,12 +27,14 @@ namespace c_sharp_account_manager
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
+
         public Register()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             this.ActiveControl = awesomeNoteLabel;
+            
         }
         protected override CreateParams CreateParams
         {
