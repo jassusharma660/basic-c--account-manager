@@ -13,12 +13,16 @@ This project was primarily made in Visual Studios 2015.
 
 2. Open the Visual Studios 2015 and go to File>Open>Project/Solution.
 
-![screenshot](https://raw.githubusercontent.com/jassusharma660/c-sharp-account-manager/master/guide/step2.png)
+<p align="center">
+  <img width="70%" src="https://raw.githubusercontent.com/jassusharma660/c-sharp-account-manager/master/guide/step2.png">
+</p>
 
 3. Go to the folder where you have cloned this project and inside that, open the folder with the name ```c-sharp-account-manager```.
 Select the Microsoft Visual Studios Solution file (c-sharp-account-manager.sln) and click ```open```
 
-![screenshot](https://raw.githubusercontent.com/jassusharma660/c-sharp-account-manager/master/guide/step3.png)
+<p align="center">
+  <img width="70%" src="https://raw.githubusercontent.com/jassusharma660/c-sharp-account-manager/master/guide/step3.png">
+</p>
 
 ***You are all done!!*** :+1:
 
