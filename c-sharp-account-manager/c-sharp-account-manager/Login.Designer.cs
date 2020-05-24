@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorTextBox = new System.Windows.Forms.TextBox();
             this.forgotPasswordLabel = new System.Windows.Forms.Label();
             this.loginButtonPanel = new System.Windows.Forms.Panel();
             this.loginButtonLabel = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.signUpButtonLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.loginImage = new System.Windows.Forms.PictureBox();
-            this.errorTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.loginButtonPanel.SuspendLayout();
             this.passwordContainer.SuspendLayout();
@@ -88,6 +88,19 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
+            // 
+            // errorTextBox
+            // 
+            this.errorTextBox.BackColor = System.Drawing.Color.White;
+            this.errorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.errorTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.errorTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.errorTextBox.Location = new System.Drawing.Point(38, 169);
+            this.errorTextBox.Multiline = true;
+            this.errorTextBox.Name = "errorTextBox";
+            this.errorTextBox.Size = new System.Drawing.Size(395, 49);
+            this.errorTextBox.TabIndex = 16;
+            this.errorTextBox.TabStop = false;
             // 
             // forgotPasswordLabel
             // 
@@ -359,25 +372,12 @@
             // loginImage
             // 
             this.loginImage.Image = ((System.Drawing.Image)(resources.GetObject("loginImage.Image")));
-            this.loginImage.Location = new System.Drawing.Point(78, 240);
+            this.loginImage.Location = new System.Drawing.Point(74, 240);
             this.loginImage.Name = "loginImage";
             this.loginImage.Size = new System.Drawing.Size(200, 200);
             this.loginImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.loginImage.TabIndex = 0;
             this.loginImage.TabStop = false;
-            // 
-            // errorTextBox
-            // 
-            this.errorTextBox.BackColor = System.Drawing.Color.White;
-            this.errorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.errorTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.errorTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.errorTextBox.Location = new System.Drawing.Point(38, 169);
-            this.errorTextBox.Multiline = true;
-            this.errorTextBox.Name = "errorTextBox";
-            this.errorTextBox.Size = new System.Drawing.Size(395, 49);
-            this.errorTextBox.TabIndex = 16;
-            this.errorTextBox.TabStop = false;
             // 
             // Login
             // 

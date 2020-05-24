@@ -177,7 +177,7 @@
             // regImage
             // 
             this.regImage.Image = ((System.Drawing.Image)(resources.GetObject("regImage.Image")));
-            this.regImage.Location = new System.Drawing.Point(34, 251);
+            this.regImage.Location = new System.Drawing.Point(35, 253);
             this.regImage.Name = "regImage";
             this.regImage.Size = new System.Drawing.Size(300, 300);
             this.regImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
