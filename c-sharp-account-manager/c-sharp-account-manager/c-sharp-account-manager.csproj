@@ -68,7 +68,6 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connection.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
