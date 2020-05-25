@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace c_sharp_account_manager
 {
@@ -16,7 +18,9 @@ namespace c_sharp_account_manager
     {
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
-   
+        SqlConnection connection;
+        string connectionString;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -120,8 +124,28 @@ namespace c_sharp_account_manager
 
         private void registerFinal_Click(object sender, EventArgs e)
         {
-            isFormDataValid();
-            //select convert(varchar, getdate(), 106)
+            if (isFormDataValid())
+            {
+                connectionString = ConfigurationManager.ConnectionStrings["c_sharp_account_manager.Properties.Settings.UsersConnectionString"].ConnectionString;
+
+                //select convert(varchar, getdate(), 106)
+                //string query = "INSERT INTO userInfoDb(userId, email, password, gender, dob) VALUES(@userId, @email, @password, @gender, convert(varchar, @dob, 106))";
+                string query = "INSERT INTO userInfoDb(userId) VALUES('@userId')";
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+
+                    //command.Parameters.AddWithValue("@userId", uidTextBox.Text);
+                    //command.Parameters.AddWithValue("@email", emailTextbox.Text);
+                    //command.Parameters.AddWithValue("@password", passwordTextBox.Text);
+                    //string gender = maleRadioButton.Checked?"Male":femaleRadioButton.Checked?"Female":nonBinaryRadioButton.Checked?"Non-Binary":"Not Specified";
+                    //command.Parameters.AddWithValue("@gender", gender);
+                    //command.Parameters.AddWithValue("@dob", uidTextBox.Text);
+
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         private bool isFormDataValid()
