@@ -18,8 +18,8 @@ namespace c_sharp_account_manager
     {
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
-        SqlConnection connection;
-        string connectionString;
+        SqlConnection con;
+        string conStr;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -38,7 +38,7 @@ namespace c_sharp_account_manager
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             this.ActiveControl = awesomeNoteLabel;
-            
+            conStr = ConfigurationManager.ConnectionStrings["c_sharp_account_manager.Properties.Settings.UserDatabaseConnectionString"].ConnectionString;
         }
         protected override CreateParams CreateParams
         {
@@ -124,28 +124,36 @@ namespace c_sharp_account_manager
 
         private void registerFinal_Click(object sender, EventArgs e)
         {
-            if (isFormDataValid())
-            {
-                connectionString = ConfigurationManager.ConnectionStrings["c_sharp_account_manager.Properties.Settings.UsersConnectionString"].ConnectionString;
-
+           // if (isFormDataValid())
+            //{
                 //select convert(varchar, getdate(), 106)
-                //string query = "INSERT INTO userInfoDb(userId, email, password, gender, dob) VALUES(@userId, @email, @password, @gender, convert(varchar, @dob, 106))";
-                string query = "INSERT INTO userInfoDb(userId) VALUES('@userId')";
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    connection.Open();
+                try { 
+                    string query = "INSERT INTO userInfoTable(userId, email, pass, gender, dob) VALUES(@userId, @email, @password, @gender, convert(varchar, @dob, 106))";
+                    //string query = "INSERT INTO userInfoTable(userId) VALUES('@userId')";
+                    con = new SqlConnection(conStr);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@userId", uidTextBox.Text);
+                    cmd.Parameters.AddWithValue("@email", emailTextbox.Text);
+                    cmd.Parameters.AddWithValue("@password", passwordTextBox.Text);
+                    string gender = maleRadioButton.Checked?"Male":femaleRadioButton.Checked?"Female":nonBinaryRadioButton.Checked?"Non-Binary":"Not Specified";
+                    cmd.Parameters.AddWithValue("@gender", gender);
+                    cmd.Parameters.AddWithValue("@dob", dobDateTimePicker.Value);
 
-                    //command.Parameters.AddWithValue("@userId", uidTextBox.Text);
-                    //command.Parameters.AddWithValue("@email", emailTextbox.Text);
-                    //command.Parameters.AddWithValue("@password", passwordTextBox.Text);
-                    //string gender = maleRadioButton.Checked?"Male":femaleRadioButton.Checked?"Female":nonBinaryRadioButton.Checked?"Non-Binary":"Not Specified";
-                    //command.Parameters.AddWithValue("@gender", gender);
-                    //command.Parameters.AddWithValue("@dob", uidTextBox.Text);
-
-                    command.ExecuteNonQuery();
+                    cmd.ExecuteScalar();
+                    if (cmd.ExecuteNonQuery() > 0)
+                        MessageBox.Show("Success!");
+                
                 }
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Try after some time!"+ex);   
+                }
+                finally
+                {
+                    con.Close();
+                }
+            //}
         }
 
         private bool isFormDataValid()

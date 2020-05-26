@@ -8,3 +8,6 @@ C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-man
 C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-manager\c-sharp-account-manager\obj\Release\c-sharp-account-manager.csproj.GenerateResource.Cache
 C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-manager\c-sharp-account-manager\obj\Release\c-sharp-account-manager.exe
 C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-manager\c-sharp-account-manager\obj\Release\c-sharp-account-manager.pdb
+C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-manager\c-sharp-account-manager\bin\Release\UserDatabase.mdf
+C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-manager\c-sharp-account-manager\bin\Release\UserDatabase_log.ldf
+C:\Users\Jassu Sharma\Desktop\VIT\c#\c-sharp-account-manager\c-sharp-account-manager\c-sharp-account-manager\obj\Release\c-sharp-account-manager.csprojResolveAssemblyReference.cache
