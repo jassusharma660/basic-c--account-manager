@@ -38,7 +38,7 @@ namespace c_sharp_account_manager
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             this.ActiveControl = awesomeNoteLabel;
-            conStr = ConfigurationManager.ConnectionStrings["c_sharp_account_manager.Properties.Settings.UserDatabaseConnectionString"].ConnectionString;
+            conStr = ConfigurationManager.ConnectionStrings["c_sharp_account_manager.Properties.Settings.LoginDatabaseConnectionString"].ConnectionString;
         }
         protected override CreateParams CreateParams
         {
@@ -124,36 +124,45 @@ namespace c_sharp_account_manager
 
         private void registerFinal_Click(object sender, EventArgs e)
         {
-           // if (isFormDataValid())
-            //{
-                //select convert(varchar, getdate(), 106)
-                try { 
-                    string query = "INSERT INTO userInfoTable(userId, email, pass, gender, dob) VALUES(@userId, @email, @password, @gender, convert(varchar, @dob, 106))";
-                    //string query = "INSERT INTO userInfoTable(userId) VALUES('@userId')";
+           if (isFormDataValid())
+           {
+                try
+                {
                     con = new SqlConnection(conStr);
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlCommand cmd = new SqlCommand("SELECT userId FROM userInfoTable WHERE userId=@userId",con);
                     cmd.Parameters.AddWithValue("@userId", uidTextBox.Text);
-                    cmd.Parameters.AddWithValue("@email", emailTextbox.Text);
-                    cmd.Parameters.AddWithValue("@password", passwordTextBox.Text);
-                    string gender = maleRadioButton.Checked?"Male":femaleRadioButton.Checked?"Female":nonBinaryRadioButton.Checked?"Non-Binary":"Not Specified";
-                    cmd.Parameters.AddWithValue("@gender", gender);
-                    cmd.Parameters.AddWithValue("@dob", dobDateTimePicker.Value);
+                    con.Open();
+                    var dr = cmd.ExecuteScalar();
 
-                    cmd.ExecuteScalar();
-                    if (cmd.ExecuteNonQuery() > 0)
-                        MessageBox.Show("Success!");
-                
+                    if (dr != null)
+                    {
+                        errorTextBox.Text = "Userid already exist!";
+                    }
+                    else
+                    {
+                        //SqlCommand cmd = new SqlCommand("INSERT INTO userInfoTable(userId, email, pass, gender, dob) VALUES(@userId, @email, @password, @gender, convert(varchar, @dob, 106))", con);
+                        cmd.CommandText = "INSERT INTO userInfoTable(userId, email, pass, gender, dob) VALUES(@userId, @email, @password, @gender, convert(varchar, @dob, 106))";
+                        //cmd.Parameters.AddWithValue("@userId", uidTextBox.Text);
+                        cmd.Parameters.AddWithValue("@email", emailTextbox.Text);
+                        cmd.Parameters.AddWithValue("@password", passwordTextBox.Text);
+                        string gender = maleRadioButton.Checked ? "Male" : femaleRadioButton.Checked ? "Female" : nonBinaryRadioButton.Checked ? "Non-Binary" : "Not Specified";
+                        cmd.Parameters.AddWithValue("@gender", gender);
+                        cmd.Parameters.AddWithValue("@dob", dobDateTimePicker.Value);
+
+                        if (cmd.ExecuteNonQuery() > 0)
+                            MessageBox.Show("Success!");
+                        errorTextBox.Text = "";
+                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: Try after some time!"+ex);   
+                    MessageBox.Show("Error: Try after some time!" + ex);
                 }
                 finally
                 {
                     con.Close();
                 }
-            //}
+            }
         }
 
         private bool isFormDataValid()

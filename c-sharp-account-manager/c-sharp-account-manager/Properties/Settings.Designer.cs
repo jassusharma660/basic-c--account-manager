@@ -26,22 +26,11 @@ namespace c_sharp_account_manager.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Users.mdf;Int" +
-            "egrated Security=True;Connect Timeout=30")]
-        public string UsersConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\LoginDatabase" +
+            ".mdf;Integrated Security=True")]
+        public string LoginDatabaseConnectionString {
             get {
-                return ((string)(this["UsersConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\UserDatabase." +
-            "mdf;Integrated Security=True")]
-        public string UserDatabaseConnectionString {
-            get {
-                return ((string)(this["UserDatabaseConnectionString"]));
+                return ((string)(this["LoginDatabaseConnectionString"]));
             }
         }
     }
