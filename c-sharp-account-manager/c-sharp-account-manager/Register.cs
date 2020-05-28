@@ -150,7 +150,17 @@ namespace c_sharp_account_manager
                         cmd.Parameters.AddWithValue("@dob", dobDateTimePicker.Value);
 
                         if (cmd.ExecuteNonQuery() > 0)
-                            MessageBox.Show("Success!");
+                        {
+                            DialogResult res = MessageBox.Show("You can login now.", "Success!",MessageBoxButtons.OKCancel);
+                            if (res == DialogResult.OK)
+                            {
+                                Login lg = new Login();
+                                this.Hide();
+                                lg.Show();
+                            }
+                            else
+                                resetInputs();
+                        }
                         errorTextBox.Text = "";
                      }
                 }
@@ -163,6 +173,18 @@ namespace c_sharp_account_manager
                     con.Close();
                 }
             }
+        }
+
+        private void resetInputs()
+        {
+            uidTextBox.Text = "";
+            emailTextbox.Text = "";
+            passwordTextBox.Text = "";
+            repeatPasswordTextBox.Text = "";
+            maleRadioButton.Checked = false;
+            femaleRadioButton.Checked = false;
+            nonBinaryRadioButton.Checked = false;
+            acceptTerms.Checked = false;
         }
 
         private bool isFormDataValid()
