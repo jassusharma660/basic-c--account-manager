@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -16,7 +18,9 @@ namespace c_sharp_account_manager
     {
         private bool dragging = false;
         private Point startPoint = new Point(0,0);
-        
+        SqlConnection con;
+        string conStr;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -34,6 +38,7 @@ namespace c_sharp_account_manager
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             this.ActiveControl = welcomeNoteLabel;
+            conStr = ConfigurationManager.ConnectionStrings["c_sharp_account_manager.Properties.Settings.LoginDatabaseConnectionString"].ConnectionString;
         }
         protected override CreateParams CreateParams
         {
@@ -162,8 +167,31 @@ namespace c_sharp_account_manager
         }
         private void loginFinal_Click(object sender, EventArgs e)
         {
-            isFormDataValid();
-            addDataToDatabase();
+            if(isFormDataValid())
+            {
+                try
+                {
+                    con = new SqlConnection(conStr);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM userInfoTable WHERE userId=@userId AND password=@password", con);
+                    cmd.Parameters.AddWithValue("@userId", uidTextBox.Text);
+                    cmd.Parameters.AddWithValue("@password", passwordTextBox.Text);
+                    con.Open();
+                    var dr = cmd.ExecuteScalar();
+
+                    if (dr != null)
+                    {
+                        errorTextBox.Text = "Userid already exist!";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Try after some time!" + ex);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
 
         private bool isFormDataValid()
@@ -203,10 +231,5 @@ namespace c_sharp_account_manager
             errorTextBox.Text = "";
             return true;
         }
-        private bool addDataToDatabase()
-        {
-            return true;
-        }
-        
     }
 }
