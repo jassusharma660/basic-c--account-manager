@@ -4,6 +4,20 @@ Feel free to use it in your project.
 
 This project was primarily made in Visual Studios 2015.
 
+## Screenshots   
+>**Login Page**   
+
+<p align="center">
+  <img width="70%" src="https://raw.githubusercontent.com/jassusharma660/c-sharp-account-manager/master/guide/screenshot1.png">
+</p>   
+
+>**Registration Page**   
+
+<p align="center">
+  <img width="70%" src="https://raw.githubusercontent.com/jassusharma660/c-sharp-account-manager/master/guide/screenshot2.png">
+</p>
+
+
 ## How to get started
 1. First step is to clone the project
 ```git clone https://github.com/jassusharma660/c-sharp-account-manager.git```
