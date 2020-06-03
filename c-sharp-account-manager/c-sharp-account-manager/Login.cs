@@ -172,7 +172,7 @@ namespace c_sharp_account_manager
                 try
                 {
                     con = new SqlConnection(conStr);
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM userInfoTable WHERE userId=@userId AND password=@password", con);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM userInfoTable WHERE userId=@userId AND pass=@password", con);
                     cmd.Parameters.AddWithValue("@userId", uidTextBox.Text);
                     cmd.Parameters.AddWithValue("@password", passwordTextBox.Text);
                     con.Open();
@@ -180,7 +180,13 @@ namespace c_sharp_account_manager
 
                     if (dr != null)
                     {
-                        errorTextBox.Text = "Userid already exist!";
+                        Dashboard d = new Dashboard();
+                        this.Hide();
+                        d.Show();
+                    }
+                    else
+                    {
+                        errorTextBox.Text = "Wrong username or password!";
                     }
                 }
                 catch (Exception ex)
